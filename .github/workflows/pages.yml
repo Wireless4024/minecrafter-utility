@@ -60,4 +60,6 @@ jobs:
         uses: actions/configure-pages@v1
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: minecrafter-utility
