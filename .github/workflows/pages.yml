@@ -4,7 +4,7 @@ name: Deploy app to Github page
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["source"]
+    branches: ["master"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -54,7 +54,7 @@ jobs:
     needs: build
     environment:
       name: github-pages
-      url: https://wireless4024.github.io
+      url: https://wireless4024.github.io/minecrafter-utility
     steps:
       - name: Setup Pages
         uses: actions/configure-pages@v1
