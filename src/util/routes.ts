@@ -47,6 +47,9 @@ const builder = new RouteBuilder()
 	.add('/',
 		component(() => import('../page/Home.svelte')),
 		{name: 'Home', description: 'home page', icon: 'home'})
+	.add('/draconic_evo/reactor',
+		component(() => import('../page/draconic_evolution/Reactor.svelte')),
+		{name: 'DE Reactor Simulation'})
 
 export const navigations: Record<string, Array<Omit<RouteInfo, "group"> & { path: string }>> = builder.build_navigation()
 export default builder.routes

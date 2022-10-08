@@ -18,9 +18,11 @@
         AutoAdjust,
         Row,
         Section,
+        Title as ATitle
     }                                   from '@smui/top-app-bar'
     import {push}                       from "svelte-spa-router"
     import {navigations}                from "../util/routes"
+    import {title}                      from "../util/shared_state.js";
     import NavItem                      from "./NavItem.svelte";
 
     let topAppBar: TopAppBarComponentDev
@@ -60,7 +62,7 @@
                 <IconButton class="material-icons" on:click={()=>open = true}>
                     menu
                 </IconButton>
-                <!--<Title>Dense</Title>-->
+                <ATitle>{$title}</ATitle>
             </Section>
             <Section align="end" toolbar>
                 <IconButton class="material-icons" title="go home" aria-label="back to home page"
