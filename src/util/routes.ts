@@ -47,9 +47,12 @@ const builder = new RouteBuilder()
 	.add('/',
 		component(() => import('../page/Home.svelte')),
 		{name: 'Home', description: 'home page', icon: 'home'})
+	.add('/vanilla/time',
+		component(() => import('../page/vanilla/TimeCalculator.svelte')),
+		{name: 'Time calculator', icon: "access_time", group: "Vanilla"})
 	.add('/draconic_evo/reactor',
 		component(() => import('../page/draconic_evolution/Reactor.svelte')),
-		{name: 'DE Reactor Simulation'})
+		{name: 'DE Reactor Simulation', group: "Forge-mod"})
 
 export const navigations: Record<string, Array<Omit<RouteInfo, "group"> & { path: string }>> = builder.build_navigation()
 export default builder.routes
